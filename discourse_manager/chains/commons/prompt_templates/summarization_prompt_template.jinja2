@@ -1,0 +1,47 @@
+You are given the history of a conversation between a user and a chatbot. It looks like this:
+
+USER: <first user message>\nBOT: <bot response>\nUSER: <second user message>
+
+# Instructions
+- Summarize the second user message as a single sentence that can be interpreted without knowing the rest of the history.
+  Your summarization must resolve references to the first message and the BOT response. Such as missing parts, pronouns,
+  etc.
+- If several topics are mentioned in the history, only consider the last mentioned one.
+- The summary must be a single user message and it must keep the tone unchanged. For example, if the user message is a
+  question, then the summary must be a question as well.
+- If the second user message does not make any references to the first user message or the BOT response, then the
+summary must be the second user message only.
+
+Make sure to return your output as a json like the examples below.
+
+# Examples
+history:
+"USER: What is Autodesk Fusion 360 with PowerInspect?\nBOT: Autodesk Fusion 360 with PowerInspect is metrology software used to measure complex 3D shapes using different types of hardware.\nUSER: How does it work?"
+result:
+"How does PowerInspect work?"
+
+history:
+"USER: What is Autodesk Maya Creative?\nBOT: Maya Creative software includes sophisticated animation, modeling, and rendering tools to bring your vision to life.\nUSER: What features does it have?"
+result:
+"What are the features of Autodesk Maya Creative?"
+
+history:
+"USER: Does Fusion 360 support collaboration?\nBOT: Yes, Fusion 360 Team Participant allows you to connect, communicate, and collaborate on a single platform.\nUSER: How much does it cost?"
+result:
+"How much does Fusion 360 Team Participant cost?"
+
+history:
+"USER: What is Autodesk BIM Collaborate?\nBOT: Autodesk BIM Collaborate is a cloud-based design collaboration and design management software that enables teams to organize project data, democratize access, and connect.\nUSER: Is there a Mac version?"
+result:
+"Does Autodesk BIM Collaborate have a MAC version?"
+
+history:
+"USER: How much does autocad cost?\nBOT: The cost of an AutoCAD subscription can vary depending on the term of the subscription. Monthly subscription: Around $220 - $235. Annual subscription: Around $1,775 - $1,865. Three-year subscription: Around $5,315.\nUSER: Is there a free trial?"
+result:
+"Is there a free trial for autocad?"
+
+# Your turn
+history:
+{{ history }}\nUSER: {{ question }}
+
+result:
