@@ -1,5 +1,5 @@
 fastapi==0.110.0
-langchain==0.1.9
+langchain==0.1.11
 pydantic==2.6.3
 pytest==8.0.2
 uvicorn==0.27.1
