@@ -22,6 +22,7 @@ INDEX_NAME = environ.get("INDEX_NAME", _DEFAULT_INDEX_NAME)
 VECTOR_STORE_K = environ.get("VECTOR_STORE_K", _DEFAULT_VECTOR_STORE_K)
 
 # ========== Temporary local configs ==========
-from constants.local_configs import setup_local_secrets
+# This is used for local configs only.
+# from constants.local_configs import setup_local_secrets
 
-setup_local_secrets()
+# setup_local_secrets()
